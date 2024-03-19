@@ -22,10 +22,17 @@ void selectionSort(int arr[], int n) {
 }
 
 int main() {
-    int arr[] = {64, 25, 12, 22, 11};
-    int n = sizeof(arr) / sizeof(arr[0]);
+    int n;
+    printf("Podaj liczbę elementów w tablicy: ");
+    scanf("%d", &n);
 
-    printf("Original array: ");
+    int arr[n];
+    printf("Podaj elementy tablicy: ");
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    printf("Nieposortowana tablica: ");
     for (int i = 0; i < n; i++) {
         printf("%d ", arr[i]);
     }
@@ -33,7 +40,7 @@ int main() {
 
     selectionSort(arr, n);
 
-    printf("Sorted array: ");
+    printf("Posortowana tablica: ");
     for (int i = 0; i < n; i++) {
         printf("%d ", arr[i]);
     }
