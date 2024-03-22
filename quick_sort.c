@@ -12,17 +12,17 @@ void swap(int* a, int* b) {
 // и помещает меньшие элементы (меньше основы) слева от основы
 // и большие элементы (больше основы) справа от основы
 int partition(int arr[], int low, int high) {
-    int pivot = arr[high]; // Основа
+    int pivot = arr[low]; // Основа
     int i = (low - 1); // Индекс меньшего элемента
 
-    for (int j = low; j <= high - 1; j++) {
+    for (int j = low + 1; j <= high; j++) {
         // Если текущий элемент меньше или равен основе
         if (arr[j] <= pivot) {
             i++; // Увеличиваем индекс меньшего элемента
             swap(&arr[i], &arr[j]);
         }
     }
-    swap(&arr[i + 1], &arr[high]);
+    swap(&arr[i + 1], &arr[low]);
     return (i + 1);
 }
 
