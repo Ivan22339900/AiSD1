@@ -5,8 +5,10 @@ void shellSort(int arr[], int n) {
 
     // Przyrosty zgodnie z sugestią Sedgewicka
     for (gap = 1; gap < n / 3; gap = gap * 3 + 1);
+    
 
     while (gap > 0) {
+        printf("%d", gap);
         for (i = gap; i < n; i++) {
             temp = arr[i];
             j = i;
